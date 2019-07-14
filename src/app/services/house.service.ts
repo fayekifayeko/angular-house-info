@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HouseService {
 
-  private apiUrl = 'localhost:49999/api/House';
+  private apiUrl = 'http://localhost:49999/api/House';
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -16,6 +16,6 @@ export class HouseService {
   }
 
   getRooms(id) {
-    return this.httpClient.get(`this.apiUrl/${id}`);
+    return this.httpClient.get(`${this.apiUrl}/${id}`);
   }
 }

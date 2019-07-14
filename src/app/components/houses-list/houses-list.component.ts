@@ -14,14 +14,12 @@ export class HousesListComponent implements OnInit {
 
   ngOnInit() {
     this.houseService.getHouses().subscribe(result => {
-      debugger;
-      console.log(result);
       this.houses = result;
     });
   }
 
   showInfo(house) {
-    const id = house.houseId;
+    const id = house.houseID;
     this.router.navigate([`/houses/${id}`]);
   }
 }
