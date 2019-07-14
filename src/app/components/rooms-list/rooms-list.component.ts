@@ -11,6 +11,7 @@ import { HouseService } from 'src/app/services/house.service';
 export class RoomsListComponent implements OnInit {
 
   private rooms;
+  private settings;
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -22,7 +23,22 @@ export class RoomsListComponent implements OnInit {
     this.houseService.getRooms(id).subscribe(result => {
       console.log(result);
       this.rooms = result['rooms'];
-    })
+    });
+    this.settings = {
+      actions: false,
+      noDataMessage: "no data found",
+      columns: {
+        name: {
+          title: 'Room Name'
+        },
+        temprature: {
+          title: 'Temprature'
+        },
+        humidity: {
+          title: 'Humidity'
+        }
+      }
+    };
   }
 
   backClicked() {

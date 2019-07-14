@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HousesListComponent } from './components/houses-list/houses-list.component';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
 
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { RoomsListComponent } from './components/rooms-list/rooms-list.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SmartTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
